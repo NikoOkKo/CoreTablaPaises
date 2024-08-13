@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Países</title>
+    <!-- Enlace a Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Enlace a tu CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4" style="background-color: rgb(199, 215, 215); font-family: cursive; text-align: center;">Tabla de Países y sus Capitales</h1>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr style="text-align: center; background-color: rgb(115, 170, 188);">
+                    <th>País</th>
+                    <th>Capital</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pais in paises %}
+                <tr>
+                    <td>{{ pais.pais }}</td>
+                    <td>{{ pais.capital }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
